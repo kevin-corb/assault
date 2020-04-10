@@ -14,14 +14,14 @@ from setuptools import find_packages, setup, Command
 # Package meta-data.
 NAME = "assault"
 DESCRIPTION = "A Python based web load testing tool."
-URL = "https://github.com/me/myproject"
-EMAIL = "kevincorbett1"
+URL = "https://github.com/kevin-corb/assault"
+EMAIL = "kevincorbett14@gmail.com"
 AUTHOR = "Kevin Corbett"
 REQUIRES_PYTHON = ">=3.7.0"
 VERSION = "0.1.0"
 
 # What packages are required for this module to be executed?
-REQUIRED = ["click"]
+REQUIRED = ["click", "requests"]
 
 # What packages are optional?
 EXTRAS = {
