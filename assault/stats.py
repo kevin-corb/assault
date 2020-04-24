@@ -101,7 +101,7 @@ class Results:
 
     def requests_per_minute(self) -> int:
         """
-        Returns the number of successful requests
+        Returns the number of requests taht could be made in a minute
 
         >>> results = Results(60,[{
         ...     'status_code':200,
@@ -116,13 +116,13 @@ class Results:
         >>> results.requests_per_minute()
         3
         """
-        return int(((self.total_time) / 60) * len(self.requests))
+        return round(len(self.requests) * 60 / self.total_time)
 
     def requests_per_second(self) -> int:
         """
         Returns the number of successful requests
 
-        >>> results = Results(6,[{
+        >>> results = Results(3,[{
         ...     'status_code':200,
         ...     'request_time':2,
         ... }, {
@@ -133,6 +133,6 @@ class Results:
         ...     'request_time':1,
         ... }])
         >>> results.requests_per_second()
-        2
+        1
         """
-        return int((self.total_time) / len(self.requests))
+        return round(len(self.requests) / self.total_time)
